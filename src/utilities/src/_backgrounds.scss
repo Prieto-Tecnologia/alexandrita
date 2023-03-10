@@ -4,13 +4,13 @@
 
 @each $colorsGroup in variables.$colors {
     @each $colorName in $colorsGroup {
-        .text-#{$colorName} {
-            color: var(--alx-#{$colorName});
+        .background-#{$colorName} {
+            background-color: var(--alx-#{$colorName});
 
             @each $mediaquery in variables.$mediaqueries {
                 @include mixins.mediaquery($mediaquery) {
                     &\@#{$mediaquery} {
-                        color: var(--alx-#{$colorName});
+                        background-color: var(--alx-#{$colorName});
                     }
                 }
             }
