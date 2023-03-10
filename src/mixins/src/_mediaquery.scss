@@ -1,0 +1,11 @@
+@use "@/variables/variables";
+
+@mixin mediaquery ($breakpoint) {
+    @each $mediaquery, $mediaqueryBreakpoint in variables.$mediaqueries {
+        @if $breakpoint == $mediaquery {
+            @media (min-width: $mediaqueryBreakpoint) {
+                @content;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@use "@/variables/variables";
+
+:root {
+    @each $colorsGroup in variables.$colors {
+        @each $colorName, $colorValue in $colorsGroup {
+            --alx-#{$colorName}: #{$colorValue};
+        }
+    }
+}
